@@ -17,3 +17,4 @@ test/version_tmp
 tmp
 .powenv
 .idea/
+.DS_STORE
