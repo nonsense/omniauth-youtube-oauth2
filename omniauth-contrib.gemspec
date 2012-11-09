@@ -4,8 +4,8 @@ require File.expand_path('../lib/omniauth/youtube_oauth2/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.add_dependency 'omniauth', '~> 1.0'
 
-  gem.authors       = ["Josh Ellithorpe", "Yury Korolev"]
-  gem.email         = ["quest@mac.com"]
+  gem.authors       = ["Drew Baumann"]
+  gem.email         = ["drew@fullscreen.net"]
   gem.description   = %q{A YouTube oauth2 strategy for OmniAuth 1.0}
   gem.summary       = %q{A YouTube oauth2 strategy for OmniAuth 1.0}
   gem.homepage      = ""
