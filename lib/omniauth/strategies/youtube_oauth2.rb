@@ -7,7 +7,7 @@ module OmniAuth
       # Possible scopes: userinfo.email,userinfo.profile,plus.me
       DEFAULT_SCOPE = "userinfo.email,userinfo.profile"
 
-      option :name, 'youtube_oauth2'
+      option :name, 'youtube'
       option :authorize_options, [:scope, :approval_prompt, :access_type, :state, :hd]
 
       option :client_options, {
