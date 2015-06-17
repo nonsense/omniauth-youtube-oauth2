@@ -35,7 +35,7 @@ module OmniAuth
         end
       end
 
-      uid { user['author'][0]["yt$userId"]["$t"] }
+      uid { user['id'] }
 
       info do
         prune!({
@@ -58,11 +58,11 @@ module OmniAuth
       end
 
       def user
-        user_hash['entry']
+        user_hash['items'][0]
       end
 
       def user_hash
-        @user_hash ||= MultiJson.decode(access_token.get("http://gdata.youtube.com/feeds/api/users/default?v=2&alt=json").body)
+        @user_hash ||= MultiJson.decode(access_token.get("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true").body)
       end
 
       private
