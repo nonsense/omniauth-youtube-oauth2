@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'omniauth-youtube-oauth2'
 
-describe OmniAuth::Strategies::YoutubeOauth2 do
+describe OmniAuth::Strategies::Youtube do
   def app; lambda{|env| [200, {}, ["Hello."]]} end
 
   before :each do
@@ -18,7 +18,7 @@ describe OmniAuth::Strategies::YoutubeOauth2 do
 
   subject do
     args = ['appid', 'secret', @options || {}].compact
-    OmniAuth::Strategies::YoutubeOauth2.new(app, *args).tap do |strategy|
+    OmniAuth::Strategies::Youtube.new(app, *args).tap do |strategy|
       strategy.stub(:request) { @request }
     end
   end
@@ -41,7 +41,7 @@ describe OmniAuth::Strategies::YoutubeOauth2 do
 
   describe '#callback_path' do
     it 'has the correct callback path' do
-      subject.callback_path.should eq('/auth/youtube-oauth2/callback')
+      subject.callback_path.should eq('/auth/youtube/callback')
     end
   end
 
